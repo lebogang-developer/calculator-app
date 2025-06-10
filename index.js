@@ -1,8 +1,5 @@
-// Variables
-let value1;
-let currentOperator;
 
-// Event handler for digits/numbers
+// Event handler to display digits/numbers
 function digitBtnPressed(button) {
   // Store the current value
   // var currentValue = document.getElementById('inputBox').value;
@@ -14,7 +11,7 @@ function digitBtnPressed(button) {
   input.value = currentValue === '0' ? newDigit : currentValue + newDigit;
 }
 
-// AC button event handler
+// AC button event handler to remove the 0 on the screen
 function btnAcPressed () {
   document.getElementById('inputBox').value = 0;
   newDigit = true;
@@ -32,3 +29,6 @@ function operatorBtnPressed(button) {
     input.value += operator;
   }
 }
+
+// The equals (=) operator
+
