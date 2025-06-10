@@ -9,3 +9,9 @@ function digitBtnPressed(button) {
 
   input.value = currentValue === '0' ? newDigit : currentValue + newDigit;
 }
+
+// AC button event handler
+function btnAcPressed () {
+  document.getElementById('inputBox').value = 0;
+  newDigit = true;
+}
