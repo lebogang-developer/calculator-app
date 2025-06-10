@@ -1,3 +1,7 @@
+// Variables
+let value1;
+let currentOperator;
+
 // Event handler for digits/numbers
 function digitBtnPressed(button) {
   // Store the current value
@@ -14,4 +18,17 @@ function digitBtnPressed(button) {
 function btnAcPressed () {
   document.getElementById('inputBox').value = 0;
   newDigit = true;
+}
+
+// Event handlers for the operators (+, -, *, /)
+function operatorBtnPressed(button) {
+  const input = document.getElementById('inputBox');
+  const currentValue = input.value;
+  const operator = button.textContent;
+  const lastChar = currentValue.slice(-1);
+
+  // Prevent adding an operator right after another operator
+  if (!["+", "-", "*", "/"].includes(lastChar)) {
+    input.value += operator;
+  }
 }
