@@ -77,3 +77,13 @@ function btnDecimalPressed() {
     input.value += '.';
   }
 }
+
+// Dark/Light Mode toggle
+function toggleDarkMode() {
+  document.body.classList.toggle('dark');
+
+  const toggleBtn = document.getElementById('toggleDarkMode');
+  toggleBtn.textContent = document.body.classList.contains('dark')
+    ? '☀️ Light Mode'
+    : '🌙 Dark Mode';
+}
