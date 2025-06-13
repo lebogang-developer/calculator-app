@@ -63,3 +63,17 @@ function btnBackspacePressed() {
     input.value = currentValue.slice(0, -1);
   }
 }
+
+// The decimal function
+function btnDecimalPressed() {
+  const input = document.getElementById('inputBox');
+  const currentValue = input.value;
+
+  // Split by operators to get the current number being typed
+  const lastNumber = currentValue.split(/[\+\-\*\/]/).pop();
+
+  // Add decimal only if current number doesn’t already have one
+  if (!lastNumber.includes('.')) {
+    input.value += '.';
+  }
+}
