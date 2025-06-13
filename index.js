@@ -1,4 +1,3 @@
-
 // Event handler to display digits/numbers
 function digitBtnPressed(button) {
   // Store the current value
@@ -12,7 +11,7 @@ function digitBtnPressed(button) {
 }
 
 // AC button event handler to remove the 0 on the screen
-function btnAcPressed () {
+function btnAcPressed() {
   document.getElementById('inputBox').value = 0;
   newDigit = true;
 }
@@ -25,10 +24,25 @@ function operatorBtnPressed(button) {
   const lastChar = currentValue.slice(-1);
 
   // Prevent adding an operator right after another operator
-  if (!["+", "-", "*", "/"].includes(lastChar)) {
+  if (!['+', '-', '*', '/'].includes(lastChar)) {
     input.value += operator;
   }
 }
 
-// The equals (=) operator
+// The equals (=) operator. This function uses JavaScript’s built-in eval() to calculate the result of the expression
 
+function btnEqualsPressed() {
+  const input = document.getElementById('inputBox');
+  const expression = input.value;
+
+  try {
+    // Evaluate the mathematical express
+    const result = eval(expression);
+
+    // Display the result, or 0 if result is undefined/null
+    input.value = result ?? '0';
+  } catch (error) {
+    // Show an error message if the evaluation fails
+    input.value = Error;
+  }
+}
