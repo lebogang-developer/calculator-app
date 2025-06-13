@@ -46,3 +46,20 @@ function btnEqualsPressed() {
     input.value = Error;
   }
 }
+
+// Backspace operation
+function btnBackspacePressed() {
+  const input = document.getElementById('inputBox');
+  const currentValue = input.value;
+
+  // Reset to "0" if only one character left
+  if (
+    currentValue.length === 1 ||
+    (currentValue.length === 2 && currentValue.startsWith('-'))
+  ) {
+    input.value = '0';
+  } else {
+    // Remove the last character
+    input.value = currentValue.slice(0, -1);
+  }
+}
